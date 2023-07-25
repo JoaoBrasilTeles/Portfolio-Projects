@@ -126,7 +126,8 @@ ORDER BY Attrition, NumofEmp DESC
 
 SELECT AVG(JobSatisfaction) AS JB_avg FROM EmployeeAttrition
 
-			-- Conclusion : Highest number of emp that had attrition are those who claimed 3 out 4 of satisfaction and the avg is 2 --
+			-- Conclusion : Highest number of emp that had attrition are those who claimed 3 out 4 of satisfaction --
+			-- and the avg is 2 --
 
 		-- Num of Companies Worked --
 
@@ -172,8 +173,8 @@ FROM EmployeeAttrition
 GROUP BY Attrition, Department
 ORDER BY Attrition, NumofEmp DESC
 
-			-- Conclusion: The rate of attrition follows a proportion within the overall number of emp and the num of emp with and -- 
-			-- without attrition --
+			-- Conclusion: The rate of attrition follows a proportion within the overall number of emp and the num of 
+			-- emp with and  without attrition --
 
 		 -- Salary -- 
 
@@ -186,13 +187,19 @@ SELECT Attrition,
 FROM EmployeeAttrition
 GROUP BY Attrition
 
-			-- Conclusion: It doesn't seem to be a big realtion within attrition and salary, what may indicate that attrition is more related -- 
-			-- with the environment --
+			-- Conclusion: It doesn't seem to be a big realtion within attrition and salary, what may indicate that 
+			-- attrition is more related with the environment --
 
 			
 		-- Company
 
-SELECT Attrition,TrainingTimesLastYear, YearsAtCompany, YearsInCurrentRole, YearsSinceLastPromotion,YearsWithCurrManager,TotalWorkingYears, WorkLifeBalance
+SELECT  Attrition,
+	TrainingTimesLastYear, 
+	YearsAtCompany, 
+	YearsInCurrentRole, 
+	YearsSinceLastPromotion,
+	YearsWithCurrManager,TotalWorkingYears, 
+	WorkLifeBalance
 FROM EmployeeAttrition;
 
                              -- Years at company and attrition x avg worlife balance --
@@ -237,17 +244,39 @@ FROM EmployeeAttrition
 GROUP BY Attrition, TrainingTimesLastYear
 ORDER BY Attrition, TrainingTimesLastYear ASC
 
-						-- Conclusion: employees are more likely to exit with they fit in the following segments, untill 5 years in the company --
-						-- work life balance claimed as 3, untill 4 years with the same manager, untill 4 years at the same role, and 2 or 3 trainments last year --
+						-- Conclusion: employees are more likely to exit with they fit in the following --
+						-- segments, untill 5 years in the company work life balance claimed as 3, --
+						-- untill 4 years with the same manager, untill 4 years at the same role, --
+						-- and 2 or 3 trainments last year --
 
 				  -- Data for Visualization --
 
-SELECT Id,Attrition, YearsAtCompany,WorkLifeBalance, YearsWithCurrManager, YearsInCurrentRole, TrainingTimesLastYear, Department,MonthlyIncome
+SELECT  Id,Attrition, 
+	YearsAtCompany,
+	WorkLifeBalance, 
+	YearsWithCurrManager, 
+	YearsInCurrentRole, 
+	TrainingTimesLastYear, 
+	Department,MonthlyIncome
 FROM EmployeeAttrition
 
 
-		-- In order to be more organized and make easier the formulation of reporting in power bi, I will donwload the tables from the "Data for Visualization" query --
-		-- but they could also be caught by the query that follows: --
+		-- In order to be more organized and make easier the formulation of reporting in power bi, -- 
+		-- I will donwload the tables from the "Data for Visualization" query but they could also be caught by 
+		-- the query that follows: --
 
-SELECT Id, Attrition, Gender, MaritalStatus, Age, JobLevel, JobSatisfaction, NumCompaniesWorked, YearsAtCompany,WorkLifeBalance, YearsWithCurrManager, YearsInCurrentRole, TrainingTimesLastYear, Department,MonthlyIncome
+SELECT 	Id,
+	Attrition, 
+	Gender, 
+	MaritalStatus, 
+	Age, 
+	JobLevel, 
+	JobSatisfaction, 
+	NumCompaniesWorked, 
+	YearsAtCompany,
+	WorkLifeBalance, 
+	YearsWithCurrManager, 
+	YearsInCurrentRole, 
+	TrainingTimesLastYear,
+	Department,MonthlyIncome
 FROM EmployeeAttrition
